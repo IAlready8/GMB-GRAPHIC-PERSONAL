@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Interactive Project Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Bebas Neue', 'sans-serif'],
+            graffiti: ['Bangers', 'cursive'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Custom grid definitions for the main layout */
+    .grid-cols-34 {
+      grid-template-columns: repeat(34, 1fr);
+    }
+    .grid-rows-18 {
+      grid-template-rows: repeat(18, 1fr);
+    }
+    /* Custom scrollbar for the new theme */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e5e5e5; /* neutral-200 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #eab308; /* yellow-500 */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #facc15; /* yellow-400 */
+    }
+    /* Custom text shadow for the graffiti effect */
+    .text-shadow-street {
+      text-shadow: 3px 3px 0px #000;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "rxjs": "https://aistudiocdn.com/rxjs@^7.8.2?conditions=es2015",
+    "rxjs/operators": "https://aistudiocdn.com/rxjs@^7.8.2/operators?conditions=es2015",
+    "rxjs/ajax": "https://aistudiocdn.com/rxjs@^7.8.2/ajax?conditions=es2015",
+    "rxjs/webSocket": "https://aistudiocdn.com/rxjs@^7.8.2/webSocket?conditions=es2015",
+    "rxjs/testing": "https://aistudiocdn.com/rxjs@^7.8.2/testing?conditions=es2015",
+    "rxjs/fetch": "https://aistudiocdn.com/rxjs@^7.8.2/fetch?conditions=es2015",
+    "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^21.0.3?external=rxjs",
+    "@angular/compiler": "https://next.esm.sh/@angular/compiler@^21.0.3?external=rxjs",
+    "@angular/core": "https://next.esm.sh/@angular/core@^21.0.3?external=rxjs",
+    "@angular/common": "https://next.esm.sh/@angular/common@^21.0.3?external=rxjs"
+  }
+}
+</script>
+</head>
+<body class="bg-neutral-200 text-neutral-900 font-sans antialiased">
+  <app-root></app-root>
+</body>
+</html>
