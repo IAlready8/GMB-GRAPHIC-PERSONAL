@@ -1,39 +1,22 @@
-<!-- Main container with relative positioning for z-index context -->
-<div class="relative max-w-screen-2xl mx-auto px-4 sm:px-8 py-4 overflow-x-clip">
-  <!-- Header with a high z-index to stay on top -->
+<!-- Main container -->
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-4 flex flex-col min-h-screen">
+  <!-- Header -->
   <header class="relative z-30 flex justify-between items-center py-6">
-    <div class="text-2xl font-display font-bold tracking-wider cursor-pointer">GMB<span class="text-yellow-400">.</span>GRAPHIC</div>
+    <a routerLink="/work" class="text-2xl font-display font-bold tracking-wider cursor-pointer">I<span class="text-red-500">8</span></a>
     <nav class="hidden md:flex items-center space-x-8 font-bold text-sm uppercase tracking-wider">
-      <a href="#" class="hover:text-yellow-400 transition-colors duration-300">Work</a>
-      <a href="#" class="hover:text-yellow-400 transition-colors duration-300">About</a>
-      <a href="#" class="hover:text-yellow-400 transition-colors duration-300">Contact</a>
+      <a routerLink="/work" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}">Work</a>
+      <a routerLink="/about" routerLinkActive="router-link-active">About</a>
+      <a routerLink="/contact" routerLinkActive="router-link-active">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Section as a background layer with a low z-index -->
-  <section class="absolute inset-x-0 top-0 z-0 flex items-center justify-center h-[40vh] min-h-[320px]">
-    <h1 class="text-[9.5vw] whitespace-nowrap font-graffiti leading-none text-black select-none">
-      ITSOKIALREADY<span class="text-red-500">8</span>
-    </h1>
-  </section>
+  <!-- Main content rendered by the router -->
+  <main class="flex-grow">
+    <router-outlet></router-outlet>
+  </main>
 
-  <!-- Main content area with a higher z-index to sit above the hero text -->
-  <div class="relative z-20">
-    <!-- Spacer div to push the gallery down into view -->
-    <div class="h-32 md:h-48"></div>
-  
-    <!-- Gallery Section -->
-    <main class="w-full max-w-[2760px] aspect-[2760/1440] relative mx-auto">
-      <div class="absolute inset-0 grid grid-cols-34 grid-rows-18 gap-5">
-        @for (item of galleryItems(); track $index) {
-          <app-gallery-item [item]="item" />
-        }
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="text-center py-16 mt-[60vw] sm:mt-[58vw] md:mt-[56vw] text-neutral-500 text-xs uppercase tracking-widest">
-       <p>&copy; {{ currentYear }} GMB GRAPHIC. ALL RIGHTS RESERVED.</p>
-    </footer>
-  </div>
+  <!-- Footer -->
+  <footer class="text-center py-8 text-neutral-500 text-xs uppercase tracking-widest">
+     <p>&copy; {{ currentYear }} I8. ALL RIGHTS RESERVED.</p>
+  </footer>
 </div>

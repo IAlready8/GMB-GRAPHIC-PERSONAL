@@ -1,0 +1,27 @@
+<!-- Main container with relative positioning for z-index context -->
+<div class="relative overflow-x-clip">
+  <!-- Hero Section as a background layer with a low z-index -->
+  <section class="absolute inset-x-0 top-0 z-0 flex items-center justify-center h-[40vh] min-h-[320px]">
+    <h1 class="text-[9.5vw] whitespace-nowrap font-graffiti leading-none text-black select-none">
+      ITSOKIALREADY<span class="text-red-500">8</span>
+    </h1>
+  </section>
+
+  <!-- Main content area with a higher z-index to sit above the hero text -->
+  <div class="relative z-20">
+    <!-- Spacer div to push the gallery down into view -->
+    <div class="h-32 md:h-48"></div>
+  
+    <!-- Gallery Section -->
+    <main class="w-full max-w-[2760px] aspect-[2760/1440] relative mx-auto">
+      <div class="absolute inset-0 grid grid-cols-34 grid-rows-18 gap-5">
+        @for (item of galleryItems(); track $index) {
+          <app-gallery-item [item]="item" />
+        }
+      </div>
+    </main>
+
+    <!-- Spacer for footer -->
+    <div class="mt-[60vw] sm:mt-[58vw] md:mt-[56vw]"></div>
+  </div>
+</div>

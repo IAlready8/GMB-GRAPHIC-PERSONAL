@@ -47,6 +47,13 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #facc15; /* yellow-400 */
     }
+    /* Active navigation link style */
+    a.router-link-active {
+      text-decoration: underline;
+      text-decoration-color: #eab308; /* yellow-500 */
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+    }
   </style>
 <script type="importmap">
 {
@@ -60,7 +67,8 @@
     "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^21.0.3?external=rxjs",
     "@angular/compiler": "https://next.esm.sh/@angular/compiler@^21.0.3?external=rxjs",
     "@angular/core": "https://next.esm.sh/@angular/core@^21.0.3?external=rxjs",
-    "@angular/common": "https://next.esm.sh/@angular/common@^21.0.3?external=rxjs"
+    "@angular/common": "https://next.esm.sh/@angular/common@^21.0.3?external=rxjs",
+    "@angular/router": "https://next.esm.sh/@angular/router@^21.0.3?external=rxjs"
   }
 }
 </script>
