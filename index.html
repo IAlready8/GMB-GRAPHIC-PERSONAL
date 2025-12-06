@@ -54,21 +54,31 @@
       text-underline-offset: 4px;
       text-decoration-thickness: 2px;
     }
+    /* Page transition animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
   </style>
 <script type="importmap">
 {
   "imports": {
-    "rxjs": "https://aistudiocdn.com/rxjs@^7.8.2?conditions=es2015",
-    "rxjs/operators": "https://aistudiocdn.com/rxjs@^7.8.2/operators?conditions=es2015",
-    "rxjs/ajax": "https://aistudiocdn.com/rxjs@^7.8.2/ajax?conditions=es2015",
-    "rxjs/webSocket": "https://aistudiocdn.com/rxjs@^7.8.2/webSocket?conditions=es2015",
-    "rxjs/testing": "https://aistudiocdn.com/rxjs@^7.8.2/testing?conditions=es2015",
-    "rxjs/fetch": "https://aistudiocdn.com/rxjs@^7.8.2/fetch?conditions=es2015",
-    "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^21.0.3?external=rxjs",
-    "@angular/compiler": "https://next.esm.sh/@angular/compiler@^21.0.3?external=rxjs",
-    "@angular/core": "https://next.esm.sh/@angular/core@^21.0.3?external=rxjs",
-    "@angular/common": "https://next.esm.sh/@angular/common@^21.0.3?external=rxjs",
-    "@angular/router": "https://next.esm.sh/@angular/router@^21.0.3?external=rxjs"
+    "rxjs": "https://esm.sh/rxjs@7.8.1?target=es2022",
+    "rxjs/operators": "https://esm.sh/rxjs@7.8.1/operators?target=es2022",
+    "@angular/compiler": "https://esm.sh/@angular/compiler@20.3.14?target=es2022",
+    "@angular/core": "https://esm.sh/@angular/core@20.3.14?target=es2022",
+    "@angular/common": "https://esm.sh/@angular/common@20.3.14?target=es2022",
+    "@angular/platform-browser": "https://esm.sh/@angular/platform-browser@20.3.14?target=es2022",
+    "@angular/router": "https://esm.sh/@angular/router@20.3.14?target=es2022"
   }
 }
 </script>
