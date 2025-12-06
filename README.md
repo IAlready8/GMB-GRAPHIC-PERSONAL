@@ -11,11 +11,15 @@ This is an elegant and interactive gallery showcasing a portfolio of creative pr
 -   `src/pages/`: Contains the components for each page of the application.
     -   `work/`: The main portfolio gallery page.
     -   `about/`: The about page.
+    -   `capabilities/`: The studio capabilities page.
+    -   `manifesto/`: The studio manifesto page.
+    -   `journal/`: The journal/blog page.
     -   `contact/`: The contact page.
 -   `src/components/`: Contains the reusable, standalone Angular components.
     -   `gallery-item/`: The component responsible for displaying a single project in the gallery.
 -   `src/services/`: Contains the application's services.
     -   `gallery.service.ts`: Provides the project data for the gallery.
+    -   `journal.service.ts`: Provides the article data for the journal page.
 
 ---
 
