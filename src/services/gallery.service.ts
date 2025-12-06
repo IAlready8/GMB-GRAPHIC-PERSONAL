@@ -43,9 +43,9 @@ export class GalleryService {
       imageSrc: 'https://cdn.prod.website-files.com/6704732ba4d30828d673de05/677fabaac24647ca24967d1e_02.webp',
     },
     {
-      title: 'Nike - Strike Without Warning',
+      title: 'RealMultiLLM',
       year: '2025',
-      link: 'https://www.gmbgraphic.com/projects/nike---strike-without-warning',
+      link: 'https://real-multi-llm.vercel.app/',
       gridArea: '6 / 7 / span 4 / span 6',
       imageSrc: 'https://jcz25fazaz.flowdrivecdn.com/D8HRJ19r4GevFzAC9umm3',
     },

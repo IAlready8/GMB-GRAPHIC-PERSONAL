@@ -1,5 +1,0 @@
-{
-  "installCommand": "echo 'Skipping installation: This is a static project using a CDN.'",
-  "buildCommand": "mkdir dist && cp -r ./* dist/",
-  "outputDirectory": "dist"
-}
