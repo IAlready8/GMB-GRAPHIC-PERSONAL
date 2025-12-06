@@ -1,3 +1,4 @@
 {
-  "framework": null
+  "installCommand": "echo 'Skipping installation: This project uses a CDN-based import map.'",
+  "buildCommand": "echo 'Skipping build: This is a static project.'"
 }

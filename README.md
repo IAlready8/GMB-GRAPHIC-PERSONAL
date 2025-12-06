@@ -78,11 +78,11 @@ Click the "Deploy with Vercel" button at the top of this README to automatically
     -   Import the Git repository where your project is hosted (e.g., GitHub, GitLab, Bitbucket).
 
 3.  **Configure the Project:**
-    This project includes a `vercel.json` file which explicitly configures it as a static deployment with no build step. When you import the project into Vercel, it will use this configuration automatically, ensuring consistent deployments. You should not need to change any settings in the Vercel dashboard.
+    This project includes a `vercel.json` file which explicitly instructs Vercel to skip the standard `install` and `build` commands. This is crucial because the project uses a CDN-based import map and does not require a server-side build. This configuration prevents dependency conflicts and ensures deployments are fast and reliable.
 
 4.  **Deploy:**
     -   Click the "Deploy" button.
-    -   Vercel will deploy your site and provide you with a live URL. Your interactive project gallery is now live.
+    -   Vercel will follow the instructions in `vercel.json`, skip the build, and deploy your site as-is.
 
 ---
 
