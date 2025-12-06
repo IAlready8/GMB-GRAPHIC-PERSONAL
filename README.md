@@ -1,10 +1,11 @@
 # Interactive Project Gallery
 
-This is an elegant and interactive gallery showcasing a portfolio of creative projects. The application is built with a zoneless Angular setup, styled with Tailwind CSS, and features a raw, brutalist design aesthetic with engaging micro-interactions.
+This is an elegant and interactive gallery showcasing a portfolio of creative projects. The application is built with a zoneless Angular setup, styled with Tailwind CSS, and features a raw, brutalist design aesthetic with engaging micro-interactions and AI-powered content generation.
 
 ## Technology Stack
 - **Angular (v20+)**: Zoneless, standalone components for a modern, performant frontend.
 - **Tailwind CSS**: For utility-first styling.
+- **Google Gemini API**: For generative AI content features.
 - **TypeScript**: For type safety and robust code.
 - **ESM (via esm.sh)**: CDN-based module loading, eliminating the need for a local build step.
 
@@ -19,7 +20,7 @@ This is an elegant and interactive gallery showcasing a portfolio of creative pr
     -   `work/`: The main portfolio gallery page.
     -   `about/`: The about page.
     -   `capabilities/`: The studio's services page.
-    -   `manifesto/`: The studio's principles page.
+    -   `manifesto/`: The studio's principles page, including an AI thought generator.
     -   `journal/`: The blog/updates page.
     -   `contact/`: The contact page.
 -   `src/components/`: Reusable components.
@@ -27,8 +28,13 @@ This is an elegant and interactive gallery showcasing a portfolio of creative pr
 -   `src/services/`: Application services.
     -   `gallery.service.ts`: Provides project data for the gallery.
     -   `journal.service.ts`: Provides article data for the journal.
+    -   `gemini.service.ts`: Handles communication with the Google Gemini API.
 
 ---
+
+## Environment Variables
+
+To use the AI-powered features, you must have a Google Gemini API key. This key must be available as an environment variable named `API_KEY`. When deploying to Vercel, you will need to add this environment variable in your project settings.
 
 ## Deploying to Vercel
 
