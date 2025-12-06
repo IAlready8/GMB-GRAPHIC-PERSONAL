@@ -32,8 +32,6 @@ To run this project on your local machine, follow these steps.
 
 ### Prerequisites
 
--   [Node.js](https://nodejs.org/) (v18 or later)
--   [npm](https://www.npmjs.com/) (or your preferred package manager)
 -   A simple local HTTP server. We recommend `serve`. If you don't have it, install it globally:
     ```bash
     npm install -g serve
@@ -78,11 +76,16 @@ Click the "Deploy with Vercel" button at the top of this README to automatically
     -   Import the Git repository where your project is hosted (e.g., GitHub, GitLab, Bitbucket).
 
 3.  **Configure the Project:**
-    This project includes a `vercel.json` file which explicitly instructs Vercel to skip the standard `install` and `build` commands. This is crucial because the project uses a CDN-based import map and does not require a server-side build. This configuration prevents dependency conflicts and ensures deployments are fast and reliable.
+    This project includes a `vercel.json` file to ensure a successful deployment. Vercel's platform expects a build step to generate an `outputDirectory`. Since our project is static and uses a CDN, we don't have a traditional build process. The `vercel.json` file works around this by:
+    -   Skipping the `npm install` step.
+    -   Running a `buildCommand` that simply creates a `dist` directory and copies all the project files into it.
+    -   Setting the `outputDirectory` to `dist`.
+    
+    This satisfies Vercel's requirements and ensures a fast, reliable deployment without dependency conflicts.
 
 4.  **Deploy:**
     -   Click the "Deploy" button.
-    -   Vercel will follow the instructions in `vercel.json`, skip the build, and deploy your site as-is.
+    -   Vercel will follow the instructions in `vercel.json` and deploy your site.
 
 ---
 

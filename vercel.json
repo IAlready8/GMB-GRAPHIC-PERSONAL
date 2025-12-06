@@ -1,4 +1,5 @@
 {
-  "installCommand": "echo 'Skipping installation: This project uses a CDN-based import map.'",
-  "buildCommand": "echo 'Skipping build: This is a static project.'"
+  "installCommand": "echo 'Skipping installation: This is a static project using a CDN.'",
+  "buildCommand": "mkdir dist && cp -r ./* dist/",
+  "outputDirectory": "dist"
 }
