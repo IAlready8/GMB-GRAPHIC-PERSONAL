@@ -1,46 +1,46 @@
 # Interactive Project Gallery
 
-This is an elegant and interactive gallery showcasing a portfolio of creative projects. The application is built with a zoneless Angular setup, styled with Tailwind CSS, and features a raw, brutalist design aesthetic with engaging micro-interactions like hover effects.
+This is an elegant and interactive gallery showcasing a portfolio of creative projects. The application is built with a zoneless Angular setup, styled with Tailwind CSS, and features a raw, brutalist design aesthetic with engaging micro-interactions.
+
+## Technology Stack
+- **Angular (v20+)**: Zoneless, standalone components for a modern, performant frontend.
+- **Tailwind CSS**: For utility-first styling.
+- **TypeScript**: For type safety and robust code.
+- **ESM (via esm.sh)**: CDN-based module loading, eliminating the need for a local build step.
 
 ## Project Structure
 
--   `index.html`: The main entry point of the application. It includes CDN links for Tailwind CSS, Google Fonts, and the import map for ES modules.
+-   `index.html`: The main entry point. Includes CDN links and the import map.
 -   `index.tsx`: The bootstrap script for the zoneless Angular application.
--   `src/app.routes.ts`: Defines the application's routes for navigation between pages.
--   `src/app.component.ts`: The root component of the application, which orchestrates the main layout shell including the header, router outlet, and footer.
--   `src/pages/`: Contains the components for each page of the application.
+-   `vercel.json`: Configuration file for Vercel deployment.
+-   `src/app.routes.ts`: Defines the application's routes for navigation.
+-   `src/app.component.ts`: The root component managing the main layout shell.
+-   `src/pages/`: Components for each page.
     -   `work/`: The main portfolio gallery page.
     -   `about/`: The about page.
+    -   `capabilities/`: The studio's services page.
+    -   `manifesto/`: The studio's principles page.
+    -   `journal/`: The blog/updates page.
     -   `contact/`: The contact page.
--   `src/components/`: Contains the reusable, standalone Angular components.
-    -   `gallery-item/`: The component responsible for displaying a single project in the gallery.
--   `src/services/`: Contains the application's services.
-    -   `gallery.service.ts`: Provides the project data for the gallery.
+-   `src/components/`: Reusable components.
+    -   `gallery-item/`: Displays a single project in the gallery.
+-   `src/services/`: Application services.
+    -   `gallery.service.ts`: Provides project data for the gallery.
+    -   `journal.service.ts`: Provides article data for the journal.
 
 ---
 
 ## Deploying to Vercel
 
-This project is configured as a static site and can be easily deployed on Vercel with zero configuration.
+This project is configured as a static site and is optimized for deployment on Vercel. The included `vercel.json` file ensures a seamless and correct deployment process.
 
-### Step-by-Step Guide
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FIAlready8%2FGMB-GRAPHIC-PERSONAL)
 
-1.  **Sign up for Vercel:**
-    If you don't have an account, sign up for a free Vercel account at [vercel.com](https://vercel.com).
+### Deployment Process
 
-2.  **Create a New Project:**
-    -   From your Vercel dashboard, click the "Add New..." button and select "Project".
-    -   Import the Git repository where your project is hosted (e.g., GitHub, GitLab, Bitbucket).
+Vercel will automatically detect the `vercel.json` file and configure the deployment correctly. The configuration instructs Vercel to:
+1.  Skip the `npm install` step, as all dependencies are loaded via a CDN import map.
+2.  Run a simple `buildCommand` that creates a `dist` directory and copies all project files into it.
+3.  Serve the application from the newly created `dist` directory.
 
-3.  **Configure the Project:**
-    Vercel is excellent at auto-detecting static projects. You should not need to change any settings. The configuration should be:
-    -   **Framework Preset:** `Other`
-    -   **Build Command:** *Leave this empty.*
-    -   **Output Directory:** *Leave this as the default.*
-    -   **Install Command:** *Leave this empty.*
-
-4.  **Deploy:**
-    -   Click the "Deploy" button.
-    -   Vercel will deploy your site and provide you with a live URL.
-
-That's it! Your interactive project gallery is now live.
+This process is robust and avoids the dependency conflicts that can arise from Vercel's default build process for static sites. Just import your repository into Vercel, and it will deploy automatically.

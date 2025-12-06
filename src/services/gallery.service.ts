@@ -64,9 +64,9 @@ export class GalleryService {
       imageSrc: 'https://cdn.prod.website-files.com/6704732ba4d30828d673de05/672ba959e510ddef1cf9269a_POSTER_LAYERED-WITH-CREDITS.webp',
     },
     {
-      title: 'AntsLive - Number One Candidate',
-      year: '2023',
-      link: 'https://www.gmbgraphic.com/projects/antslive-number-one-candidate',
+      title: 'Personal Portfolio',
+      year: '2024',
+      link: 'https://personal-portfolio-local-m2.vercel.app/',
       gridArea: '11 / 7 / span 4 / span 5',
       imageSrc: 'https://jcz25fazaz.flowdrivecdn.com/Z9HZCA3RbT',
     },
