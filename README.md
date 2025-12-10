@@ -1,5 +1,9 @@
 # Interactive Project Gallery
 
+<img width="1468" height="939" alt="Screenshot 2025-12-10 at 8 17 16 AM" src="https://github.com/user-attachments/assets/4d583f59-6631-4ead-a8d4-75ca0efc0719" />
+
+https://aistudio.google.com/app/apps/drive/1SvaISdAvHRdp4OmmfHMO5yrigV-oOOBF?showAssistant=true&resourceKey=&showPreview=true
+
 This is an elegant and interactive gallery showcasing a portfolio of creative projects. The application is built with a zoneless Angular setup, styled with Tailwind CSS, and features a raw, brutalist design aesthetic with engaging micro-interactions and AI-powered content generation.
 
 ## Technology Stack
