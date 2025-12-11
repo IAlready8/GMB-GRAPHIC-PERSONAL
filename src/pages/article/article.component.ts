@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs/operators';
+// FIX: Use modern `rxjs` import for the map operator.
+import { map } from 'rxjs';
 import { JournalService } from '../../services/journal.service';
 
 @Component({
@@ -15,8 +16,11 @@ export class ArticleComponent {
   private route = inject(ActivatedRoute);
   private journalService = inject(JournalService);
 
+  // FIX: Switched from `paramMap` to `params` to resolve type errors.
+  // The original code with `paramMap` resulted in `unknown` types. Using `params`
+  // with bracket access correctly infers the slug type and fixes all related errors.
   private readonly slug = toSignal(
-    this.route.paramMap.pipe(map(params => params.get('slug')))
+    this.route.params.pipe(map(params => params['slug']))
   );
 
   readonly entry = computed(() => {
@@ -24,6 +28,8 @@ export class ArticleComponent {
     if (!currentSlug) {
       return undefined;
     }
+    // FIX: The type of `currentSlug` is now correctly inferred as `string` inside this block,
+    // which fixes the error when calling `getEntryBySlug`.
     return this.journalService.getEntryBySlug(currentSlug);
   });
 }
