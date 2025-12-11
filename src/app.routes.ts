@@ -27,6 +27,11 @@ export const routes: Routes = [
     title: 'I8 - Journal'
   },
   {
+    path: 'journal/:slug',
+    loadComponent: () => import('./pages/article/article.component').then(m => m.ArticleComponent),
+    title: 'I8 - Journal'
+  },
+  {
     path: 'contact',
     loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent),
     title: 'I8 - Contact'

@@ -22,9 +22,9 @@ export class GalleryService {
       videoSrc: 'https://jcz25Fazaz.flowdrivecdn.com/file-8f54793b-8f4d-4eff-b2b2-db8b5e82d94c',
     },
     {
-      title: 'Konyikeh - Lie To Me',
+      title: 'FIXUS',
       year: '2024',
-      link: 'https://www.gmbgraphic.com/projects/konyikeh-lie-to-me',
+      link: 'https://ai-tool-website-frontend-an7lkdg8r-itsokialready8.vercel.app/',
       gridArea: '2 / 18 / span 4 / span 5',
       imageSrc: 'https://jcz25fazaz.flowdrivecdn.com/achQkHCPxB',
     },
