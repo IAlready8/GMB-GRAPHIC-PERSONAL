@@ -17,6 +17,11 @@ export const routes: Routes = [
     title: 'I8 - Capabilities'
   },
   {
+    path: 'capabilities/:slug',
+    loadComponent: () => import('./pages/capability-detail/capability-detail.component').then(m => m.CapabilityDetailComponent),
+    title: 'I8 - Capability'
+  },
+  {
     path: 'manifesto',
     loadComponent: () => import('./pages/manifesto/manifesto.component').then(m => m.ManifestoComponent),
     title: 'I8 - Manifesto'

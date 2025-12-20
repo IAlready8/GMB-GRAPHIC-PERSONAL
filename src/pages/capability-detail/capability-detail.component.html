@@ -1,0 +1,38 @@
+<div class="py-16 md:py-24 px-4 sm:px-8 animate-fade-in-up">
+  @if (capability(); as cap) {
+    <div class="max-w-6xl mx-auto">
+      <header class="mb-12 text-center border-b-4 border-[var(--border-color)] pb-8">
+        <h1 class="font-display text-4xl md:text-6xl font-bold tracking-wider mb-4">{{ cap.title }}</h1>
+        <p class="max-w-3xl mx-auto text-lg text-[var(--text-color-secondary)] leading-relaxed">{{ cap.description }}</p>
+      </header>
+
+      <h2 class="text-center font-display text-3xl font-bold tracking-wider mb-12">RELATED PROJECTS</h2>
+      
+      @if (projects().length > 0) {
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          @for (item of projects(); track item.title) {
+            <div class="w-full h-full aspect-[4/3]">
+              <app-gallery-item [item]="item" />
+            </div>
+          }
+        </div>
+      } @else {
+        <p class="text-center text-[var(--text-color-muted)] font-mono">No projects have been tagged with this capability yet.</p>
+      }
+
+      <div class="mt-16 pt-8 border-t-2 border-[var(--border-color)] text-center">
+        <a routerLink="/capabilities" class="inline-block font-bold text-lg uppercase tracking-widest border-b-2 border-[var(--border-color)] hover:border-[var(--accent-color-hover)] transition-colors duration-300">
+          &larr; ALL CAPABILITIES
+        </a>
+      </div>
+    </div>
+  } @else {
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="font-display text-4xl md:text-6xl font-bold tracking-wider mb-4">404</h1>
+      <p class="text-lg text-[var(--text-color-secondary)] mb-8">The capability you are looking for does not exist.</p>
+      <a routerLink="/capabilities" class="inline-block font-bold text-lg uppercase tracking-widest border-b-2 border-[var(--border-color)] hover:border-[var(--accent-color-hover)] transition-colors duration-300">
+        &larr; ALL CAPABILITIES
+      </a>
+    </div>
+  }
+</div>
