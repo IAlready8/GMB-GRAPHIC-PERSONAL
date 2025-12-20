@@ -1,8 +1,13 @@
+<!-- 3D Background, rendered conditionally by theme -->
+@if (themeService.isThreeJsTheme()) {
+  <app-threejs-background />
+}
+
 <!-- Main container -->
-<div class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-4 flex flex-col min-h-screen">
+<div class="max-w-screen-2xl mx-auto px-4 sm:px-8 py-4 flex flex-col min-h-screen relative z-10">
   <!-- Header -->
   <header class="relative z-50 flex justify-between items-center py-6">
-    <a routerLink="/work" class="text-4xl font-display font-bold tracking-wider cursor-pointer">I<span class="text-red-500">8</span></a>
+    <a routerLink="/work" class="text-4xl font-display font-bold tracking-wider cursor-pointer">I<span class="text-[var(--special-accent-color)]">8</span></a>
     
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center space-x-8 font-bold text-sm uppercase tracking-wider">
@@ -12,6 +17,7 @@
       <a routerLink="/manifesto" routerLinkActive="router-link-active">Manifesto</a>
       <a routerLink="/journal" routerLinkActive="router-link-active">Journal</a>
       <a routerLink="/contact" routerLinkActive="router-link-active">Contact</a>
+      <button (click)="cycleTheme()" class="hover:text-[var(--accent-color)] transition-colors duration-300" aria-label="Change theme">Colour</button>
     </nav>
 
     <!-- Mobile Menu Button -->
@@ -26,21 +32,25 @@
   <div 
     [class.translate-x-0]="isMobileMenuOpen()" 
     [class.translate-x-full]="!isMobileMenuOpen()"
-    class="fixed inset-0 bg-black z-40 transform transition-transform duration-300 ease-in-out md:hidden">
+    [style.background]="themeService.currentTheme().properties['--backdrop-styles'] ? 'transparent' : 'var(--bg-overlay-color)'"
+    [style.backdrop-filter]="themeService.currentTheme().properties['--backdrop-styles'] ? 'blur(16px)' : 'none'"
+    class="fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:hidden"
+    style="-webkit-backdrop-filter: blur(16px);">
     
-    <div class="flex flex-col items-center justify-center h-full">
+    <div class="flex flex-col items-center justify-center h-full bg-[var(--bg-overlay-color)]" [style.background]="themeService.currentTheme().properties['--backdrop-styles'] ? 'rgba(0,0,0,0.5)' : 'var(--bg-overlay-color)'">
       <nav class="flex flex-col items-center space-y-12">
-        <a routerLink="/work" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()" class="text-3xl font-display text-neutral-200 hover:text-yellow-400 transition-colors">Work</a>
-        <a routerLink="/about" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-neutral-200 hover:text-yellow-400 transition-colors">About</a>
-        <a routerLink="/capabilities" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-neutral-200 hover:text-yellow-400 transition-colors">Capabilities</a>
-        <a routerLink="/manifesto" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-neutral-200 hover:text-yellow-400 transition-colors">Manifesto</a>
-        <a routerLink="/journal" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-neutral-200 hover:text-yellow-400 transition-colors">Journal</a>
-        <a routerLink="/contact" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-neutral-200 hover:text-yellow-400 transition-colors">Contact</a>
+        <a routerLink="/work" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleMobileMenu()" class="text-3xl font-display text-[var(--text-overlay-color)] hover:text-[var(--accent-color-hover)] transition-colors">Work</a>
+        <a routerLink="/about" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-[var(--text-overlay-color)] hover:text-[var(--accent-color-hover)] transition-colors">About</a>
+        <a routerLink="/capabilities" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-[var(--text-overlay-color)] hover:text-[var(--accent-color-hover)] transition-colors">Capabilities</a>
+        <a routerLink="/manifesto" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-[var(--text-overlay-color)] hover:text-[var(--accent-color-hover)] transition-colors">Manifesto</a>
+        <a routerLink="/journal" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-[var(--text-overlay-color)] hover:text-[var(--accent-color-hover)] transition-colors">Journal</a>
+        <a routerLink="/contact" routerLinkActive="router-link-active" (click)="toggleMobileMenu()" class="text-3xl font-display text-[var(--text-overlay-color)] hover:text-[var(--accent-color-hover)] transition-colors">Contact</a>
+        <button (click)="cycleTheme(); toggleMobileMenu()" class="text-3xl font-display text-[var(--text-overlay-color)] hover:text-[var(--accent-color-hover)] transition-colors uppercase">Colour</button>
       </nav>
     </div>
 
      <button (click)="toggleMobileMenu()" class="absolute top-8 right-6 p-2" aria-label="Close menu">
-        <svg class="w-8 h-8 text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-8 h-8 text-[var(--text-overlay-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
     </button>
@@ -53,7 +63,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-8 text-neutral-500 text-xs uppercase tracking-widest">
+  <footer class="text-center py-8 text-[var(--text-color-muted)] text-xs uppercase tracking-widest">
      <p>&copy; {{ currentYear }} I8. ALL RIGHTS RESERVED.</p>
   </footer>
 </div>

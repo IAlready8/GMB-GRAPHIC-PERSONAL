@@ -1,16 +1,16 @@
 <div class="py-16 md:py-24 px-4 sm:px-8 animate-fade-in-up">
   @if (entry(); as article) {
     <div class="max-w-4xl mx-auto">
-      <header class="mb-12 text-center border-b-4 border-black pb-8">
+      <header class="mb-12 text-center border-b-4 border-[var(--border-color)] pb-8">
         <h1 class="font-display text-4xl md:text-6xl font-bold tracking-wider mb-4">{{ article.title }}</h1>
-        <p class="text-neutral-600 font-bold text-sm uppercase">{{ article.date }}</p>
+        <p class="text-[var(--text-color-muted)] font-bold text-sm uppercase">{{ article.date }}</p>
       </header>
       
-      <article class="space-y-6 text-lg text-neutral-800 leading-relaxed" [innerHTML]="article.content">
+      <article class="space-y-6 text-lg text-[var(--text-color-secondary)] leading-relaxed" [innerHTML]="article.content">
       </article>
 
-      <div class="mt-16 pt-8 border-t-2 border-black text-center">
-        <a routerLink="/journal" class="inline-block font-bold text-lg uppercase tracking-widest border-b-2 border-black hover:border-yellow-400 transition-colors duration-300">
+      <div class="mt-16 pt-8 border-t-2 border-[var(--border-color)] text-center">
+        <a routerLink="/journal" class="inline-block font-bold text-lg uppercase tracking-widest border-b-2 border-[var(--border-color)] hover:border-[var(--accent-color-hover)] transition-colors duration-300">
           &larr; BACK TO JOURNAL
         </a>
       </div>
@@ -18,8 +18,8 @@
   } @else {
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="font-display text-4xl md:text-6xl font-bold tracking-wider mb-4">404</h1>
-      <p class="text-lg text-neutral-700 mb-8">The concrete slab you are looking for has been moved or was never poured.</p>
-      <a routerLink="/journal" class="inline-block font-bold text-lg uppercase tracking-widest border-b-2 border-black hover:border-yellow-400 transition-colors duration-300">
+      <p class="text-lg text-[var(--text-color-secondary)] mb-8">The concrete slab you are looking for has been moved or was never poured.</p>
+      <a routerLink="/journal" class="inline-block font-bold text-lg uppercase tracking-widest border-b-2 border-[var(--border-color)] hover:border-[var(--accent-color-hover)] transition-colors duration-300">
         &larr; BACK TO JOURNAL
       </a>
     </div>

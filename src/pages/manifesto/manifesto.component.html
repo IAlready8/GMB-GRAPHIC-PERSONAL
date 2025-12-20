@@ -4,29 +4,29 @@
     <div class="space-y-10">
       
       <div class="group flex items-start gap-4 md:gap-6">
-        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-yellow-400 transition-colors duration-300">1</span>
-        <p class="border-t-4 border-black group-hover:border-yellow-400 pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-neutral-800 group-hover:text-black transition-colors duration-300">
+        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-[var(--accent-color)] transition-colors duration-300">1</span>
+        <p class="border-t-4 border-[var(--border-color)] group-hover:border-[var(--accent-color-hover)] pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-[var(--text-color-secondary)] group-hover:text-[var(--text-color)] transition-colors duration-300">
           Reject the Polished. Embrace the Raw.
         </p>
       </div>
 
       <div class="group flex items-start gap-4 md:gap-6">
-        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-yellow-400 transition-colors duration-300">2</span>
-        <p class="border-t-4 border-black group-hover:border-yellow-400 pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-neutral-800 group-hover:text-black transition-colors duration-300">
+        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-[var(--accent-color)] transition-colors duration-300">2</span>
+        <p class="border-t-4 border-[var(--border-color)] group-hover:border-[var(--accent-color-hover)] pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-[var(--text-color-secondary)] group-hover:text-[var(--text-color)] transition-colors duration-300">
           Function is Form. Brutality is Beauty.
         </p>
       </div>
 
       <div class="group flex items-start gap-4 md:gap-6">
-        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-yellow-400 transition-colors duration-300">3</span>
-        <p class="border-t-4 border-black group-hover:border-yellow-400 pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-neutral-800 group-hover:text-black transition-colors duration-300">
+        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-[var(--accent-color)] transition-colors duration-300">3</span>
+        <p class="border-t-4 border-[var(--border-color)] group-hover:border-[var(--accent-color-hover)] pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-[var(--text-color-secondary)] group-hover:text-[var(--text-color)] transition-colors duration-300">
           Create Friction. Demand Attention.
         </p>
       </div>
 
       <div class="group flex items-start gap-4 md:gap-6">
-        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-yellow-400 transition-colors duration-300">4</span>
-        <p class="border-t-4 border-black group-hover:border-yellow-400 pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-neutral-800 group-hover:text-black transition-colors duration-300">
+        <span class="font-display text-5xl md:text-6xl font-bold text-neutral-400 group-hover:text-[var(--accent-color)] transition-colors duration-300">4</span>
+        <p class="border-t-4 border-[var(--border-color)] group-hover:border-[var(--accent-color-hover)] pt-4 text-xl md:text-2xl font-bold uppercase tracking-wider text-[var(--text-color-secondary)] group-hover:text-[var(--text-color)] transition-colors duration-300">
           Honesty Over Aesthetics.
         </p>
       </div>
@@ -34,26 +34,26 @@
     </div>
 
     <!-- AI Thought Generator -->
-    <div class="mt-24 border-t-4 border-black pt-8">
+    <div class="mt-24 border-t-4 border-[var(--border-color)] pt-8">
       <h2 class="text-center font-display text-4xl font-bold tracking-wider mb-8">THOUGHT GENERATOR</h2>
       <div class="text-center">
         <button 
           (click)="generateNewThought()" 
           [disabled]="loading()"
-          class="inline-block font-bold text-xl uppercase tracking-widest border-4 border-black px-8 py-4 hover:bg-yellow-400 hover:text-black transition-colors duration-300 disabled:bg-neutral-400 disabled:cursor-wait">
+          class="inline-block font-bold text-xl uppercase tracking-widest border-4 border-[var(--border-color)] px-8 py-4 hover:bg-[var(--accent-color-hover)] hover:text-black transition-colors duration-300 disabled:bg-neutral-400 disabled:cursor-wait">
           [ {{ loading() ? 'GENERATING...' : 'GENERATE THOUGHT' }} ]
         </button>
       </div>
 
-      <div class="mt-8 min-h-[6rem] flex items-center justify-center border-4 border-black p-6 bg-neutral-100">
+      <div class="mt-8 min-h-[6rem] flex items-center justify-center border-4 border-[var(--border-color)] p-6 bg-neutral-100/30">
         @if (loading()) {
-          <p class="font-mono text-neutral-500 animate-pulse">Contacting the void...</p>
+          <p class="font-mono text-[var(--text-color-muted)] animate-pulse">Contacting the void...</p>
         } @else if (error()) {
           <p class="font-mono text-red-600">{{ error() }}</p>
         } @else if (poem()) {
-          <p class="font-mono text-lg md:text-xl text-black">"{{ poem() }}"</p>
+          <p class="font-mono text-lg md:text-xl text-[var(--text-color)]">"{{ poem() }}"</p>
         } @else {
-           <p class="font-mono text-neutral-500">Awaiting input.</p>
+           <p class="font-mono text-[var(--text-color-muted)]">Awaiting input.</p>
         }
       </div>
     </div>

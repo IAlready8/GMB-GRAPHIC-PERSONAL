@@ -26,6 +26,37 @@
     }
   </script>
   <style>
+    /* Base theme variables (Default Brutalist) */
+    :root {
+      --bg-color: #e5e5e5;
+      --text-color: #171717;
+      --text-color-secondary: #262626;
+      --text-color-muted: #525252;
+      --border-color: #000000;
+      --accent-color: #eab308;
+      --accent-color-hover: #facc15;
+      --special-accent-color: #ef4444;
+      --bg-overlay-color: #000000;
+      --text-overlay-color: #e5e5e5;
+      --scrollbar-track-color: #e5e5e5;
+      --scrollbar-thumb-color: #eab308;
+      --scrollbar-thumb-hover-color: #facc15;
+      --bg-texture-url: none;
+      --special-text-glow: none;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: var(--bg-texture-url);
+      background-size: cover;
+      opacity: 0.1;
+      pointer-events: none;
+    }
     /* Custom grid definitions for the main layout */
     .grid-cols-34 {
       grid-template-columns: repeat(34, 1fr);
@@ -33,24 +64,24 @@
     .grid-rows-18 {
       grid-template-rows: repeat(18, 1fr);
     }
-    /* Custom scrollbar for the new theme */
+    /* Custom scrollbar using theme variables */
     ::-webkit-scrollbar {
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #e5e5e5; /* neutral-200 */
+      background: var(--scrollbar-track-color);
     }
     ::-webkit-scrollbar-thumb {
-      background: #eab308; /* yellow-500 */
+      background: var(--scrollbar-thumb-color);
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #facc15; /* yellow-400 */
+      background: var(--scrollbar-thumb-hover-color);
     }
-    /* Active navigation link style */
+    /* Active navigation link style using theme variables */
     a.router-link-active {
       text-decoration: underline;
-      text-decoration-color: #eab308; /* yellow-500 */
+      text-decoration-color: var(--accent-color);
       text-underline-offset: 4px;
       text-decoration-thickness: 2px;
     }
@@ -80,12 +111,13 @@
     "@angular/platform-browser": "https://esm.sh/@angular/platform-browser@20.3.14?target=es2022",
     "@angular/router": "https://esm.sh/@angular/router@20.3.14?target=es2022",
     "@google/genai": "https://esm.sh/@google/genai?target=es2022",
-    "@angular/core/rxjs-interop": "https://next.esm.sh/@angular/core@^21.0.4/rxjs-interop?external=rxjs"
+    "@angular/core/rxjs-interop": "https://next.esm.sh/@angular/core@^21.0.4/rxjs-interop?external=rxjs",
+    "three": "https://esm.sh/three@0.167.0?target=es2022"
   }
 }
 </script>
 </head>
-<body class="bg-neutral-200 text-neutral-900 font-sans antialiased">
+<body class="bg-[var(--bg-color)] text-[var(--text-color)] font-sans antialiased transition-colors duration-500">
   <app-root></app-root>
 </body>
 </html>
