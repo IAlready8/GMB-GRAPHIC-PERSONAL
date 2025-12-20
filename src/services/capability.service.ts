@@ -1,9 +1,19 @@
 import { Injectable, signal } from '@angular/core';
 
+export interface ContentSection {
+  type: 'text' | 'image' | 'text-with-image';
+  title?: string;
+  content?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  layout?: 'image-left' | 'image-right';
+}
+
 export interface Capability {
   title: string;
   description: string;
   slug: string;
+  sections?: ContentSection[];
 }
 
 @Injectable({
@@ -15,11 +25,51 @@ export class CapabilityService {
       title: 'VISUAL IDENTITY',
       slug: 'visual-identity',
       description: 'Logos that are scars, not badges. Brands that bleed authenticity. We build identities that are felt, not just seen.',
+      sections: [
+        {
+          type: 'text-with-image',
+          title: 'BEYOND THE LOGO',
+          content: '<p>An identity is more than a mark. It\'s a system of expression—typography, color, imagery, and tone of voice. We build comprehensive visual languages that are flexible, ownable, and built to last in any environment, from a tiny favicon to a towering billboard.</p>',
+          imageUrl: 'https://picsum.photos/seed/visual-identity-1/800/600',
+          imageAlt: 'Abstract visual identity concept',
+          layout: 'image-right'
+        },
+        {
+          type: 'image',
+          imageUrl: 'https://picsum.photos/seed/visual-identity-2/1200/600',
+          imageAlt: 'Multiple brand touchpoints shown in a collage'
+        },
+        {
+            type: 'text',
+            title: 'STRATEGY-DRIVEN',
+            content: '<p>Every visual choice is rooted in strategy. We don\'t decorate; we communicate. Our process begins with understanding the core of a brand to ensure the final identity is not just aesthetically powerful, but also intellectually sound and commercially effective.</p>'
+        }
+      ]
     },
     {
       title: 'DIGITAL EXPERIENCES',
       slug: 'digital-experiences',
       description: 'Websites that are hostile to mediocrity. Interfaces that challenge, not coddle. We create digital spaces that are raw and unforgettable.',
+      sections: [
+        {
+          type: 'text',
+          title: 'STRUCTURE AS STATEMENT',
+          content: '<p>Our approach to web design prioritizes brutalist honesty and function. We believe the structure of a site—the grid, the flow, the raw HTML—is as much a part of the brand message as the content itself. We build experiences that are direct, fast, and unapologetically digital.</p>'
+        },
+        {
+            type: 'image',
+            imageUrl: 'https://picsum.photos/seed/digital-experience-1/1200/700',
+            imageAlt: 'Wireframe of a website with structural grid lines'
+        },
+        {
+            type: 'text-with-image',
+            title: 'INTERACTION WITH INTENT',
+            content: '<p>We use motion and interactivity not as garnish, but as tools to enhance meaning and guide users. From subtle micro-interactions to bold, immersive animations, every element of movement serves a purpose, creating an experience that is engaging and intuitive, even in its complexity.</p>',
+            imageUrl: 'https://picsum.photos/seed/digital-experience-2/800/600',
+            imageAlt: 'Interactive user interface element glowing',
+            layout: 'image-left'
+        }
+      ]
     },
     {
       title: 'MOTION & 3D',

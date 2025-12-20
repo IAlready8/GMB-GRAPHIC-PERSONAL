@@ -1,30 +1,81 @@
 <div class="py-16 md:py-24 px-4 sm:px-8 animate-fade-in-up">
   @if (capability(); as cap) {
     <div class="max-w-6xl mx-auto">
+      <!-- Back to Capabilities Link -->
+      <div class="mb-8">
+        <a routerLink="/capabilities" class="inline-flex items-center gap-2 font-bold uppercase tracking-wider text-sm text-[var(--text-color-muted)] hover:text-[var(--text-color)] transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span>All Capabilities</span>
+        </a>
+      </div>
+
       <header class="mb-12 text-center border-b-4 border-[var(--border-color)] pb-8">
         <h1 class="font-display text-4xl md:text-6xl font-bold tracking-wider mb-4">{{ cap.title }}</h1>
         <p class="max-w-3xl mx-auto text-lg text-[var(--text-color-secondary)] leading-relaxed">{{ cap.description }}</p>
       </header>
 
-      <h2 class="text-center font-display text-3xl font-bold tracking-wider mb-12">RELATED PROJECTS</h2>
-      
-      @if (projects().length > 0) {
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          @for (item of projects(); track item.title) {
-            <div class="w-full h-full aspect-[4/3]">
-              <app-gallery-item [item]="item" />
-            </div>
+      <!-- Modular Content Sections -->
+      @if(cap.sections && cap.sections.length > 0) {
+        <div class="space-y-16 md:space-y-24 my-16 md:my-24">
+          @for(section of cap.sections; track $index) {
+            @switch (section.type) {
+              @case ('text') {
+                <section class="max-w-4xl mx-auto text-left">
+                  @if (section.title) {
+                    <h2 class="font-display text-3xl font-bold tracking-wider mb-4 border-b-2 border-[var(--border-color)] pb-2">{{ section.title }}</h2>
+                  }
+                  @if (section.content) {
+                    <div class="text-lg text-[var(--text-color-secondary)] leading-relaxed space-y-4" [innerHTML]="section.content"></div>
+                  }
+                </section>
+              }
+              @case ('image') {
+                <section>
+                  <img [src]="section.imageUrl" [alt]="section.imageAlt ?? ''" class="w-full h-auto object-cover border-4 border-[var(--border-color)]" loading="lazy" />
+                </section>
+              }
+              @case ('text-with-image') {
+                <section class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                  <div [class.md:order-2]="section.layout === 'image-left'">
+                    <img [src]="section.imageUrl" [alt]="section.imageAlt ?? ''" class="w-full h-auto object-cover border-4 border-[var(--border-color)]" loading="lazy" />
+                  </div>
+                  <div [class.md:order-1]="section.layout === 'image-left'">
+                    @if (section.title) {
+                      <h2 class="font-display text-3xl font-bold tracking-wider mb-4 border-b-2 border-[var(--border-color)] pb-2">{{ section.title }}</h2>
+                    }
+                    @if (section.content) {
+                      <div class="text-lg text-[var(--text-color-secondary)] leading-relaxed space-y-4" [innerHTML]="section.content"></div>
+                    }
+                  </div>
+                </section>
+              }
+            }
           }
         </div>
-      } @else {
-        <p class="text-center text-[var(--text-color-muted)] font-mono">No projects have been tagged with this capability yet.</p>
       }
 
-      <div class="mt-16 pt-8 border-t-2 border-[var(--border-color)] text-center">
-        <a routerLink="/capabilities" class="inline-block font-bold text-lg uppercase tracking-widest border-b-2 border-[var(--border-color)] hover:border-[var(--accent-color-hover)] transition-colors duration-300">
-          &larr; ALL CAPABILITIES
-        </a>
-      </div>
+      <!-- RELATED PROJECTS section -->
+      <section 
+        [class.border-t-4]="cap.sections && cap.sections.length > 0" 
+        [class.border-[var(--border-color)]]="cap.sections && cap.sections.length > 0" 
+        [class.pt-16]="cap.sections && cap.sections.length > 0" 
+        [class.mt-16]="cap.sections && cap.sections.length > 0">
+        <h2 class="text-center font-display text-3xl font-bold tracking-wider mb-12">RELATED PROJECTS</h2>
+        
+        @if (projects().length > 0) {
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @for (item of projects(); track item.title) {
+              <div class="w-full h-full aspect-[4/3]">
+                <app-gallery-item [item]="item" />
+              </div>
+            }
+          </div>
+        } @else {
+          <p class="text-center text-[var(--text-color-muted)] font-mono">No projects have been tagged with this capability yet.</p>
+        }
+      </section>
     </div>
   } @else {
     <div class="max-w-4xl mx-auto text-center">
