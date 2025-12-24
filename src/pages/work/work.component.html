@@ -10,13 +10,13 @@
   </section>
 
   <!-- Main content area with a higher z-index to sit above the hero text -->
-  <div class="relative z-20">
+  <div class="relative z-20 animate-fade-in-up">
     <!-- Spacer div to push the gallery down into view -->
     <div class="h-32 md:h-48"></div>
   
     <!-- Gallery Section -->
-    <main class="w-full max-w-[2760px] aspect-[2760/1440] relative mx-auto">
-      <div class="absolute inset-0 grid grid-cols-34 grid-rows-18 gap-5">
+    <main class="w-full max-w-[2760px] aspect-[2760/1760] relative mx-auto">
+      <div class="absolute inset-0 grid grid-cols-34 grid-rows-22 gap-5">
         @for (item of galleryItems(); track $index) {
           <app-gallery-item [item]="item" />
         }
@@ -24,6 +24,6 @@
     </main>
 
     <!-- Spacer for footer -->
-    <div class="mt-[60vw] sm:mt-[58vw] md:mt-[56vw]"></div>
+    <div class="mt-[72vw] sm:mt-[70vw] md:mt-[68vw]"></div>
   </div>
 </div>
