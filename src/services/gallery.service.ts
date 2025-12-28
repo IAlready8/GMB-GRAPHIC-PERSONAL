@@ -1,4 +1,4 @@
- import { Injectable, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 export interface GalleryItem {
   title: string;
@@ -16,9 +16,9 @@ export interface GalleryItem {
 export class GalleryService {
   private items = signal<GalleryItem[]>([
     {
-      title: 'AI Palace V2',
+      title: 'SPOWREEL',
       year: '24',
-      link: 'https://ai-palace-v2-gb2tp29vw-itsokialready8.vercel.app/',
+      link: 'https://www.gmbgraphic.com/projects/showreel',
       gridArea: '11 / 14 / span 6 / span 8',
       videoSrc: 'https://jcz25Fazaz.flowdrivecdn.com/file-8f54793b-8f4d-4eff-b2b2-db8b5e82d94c',
       capabilities: ['motion-3d', 'art-direction', 'film-editorial', 'sound-design-score'],
@@ -32,17 +32,17 @@ export class GalleryService {
       capabilities: ['digital-experiences', 'product-design-ui-ux', 'ai-generative-systems'],
     },
     {
-      title: 'Minimal Portfolio',
+      title: 'Kidakudz ft Boj - Banger',
       year: '2024',
-      link: 'https://minimal-portfolio-pi-eight.vercel.app/',
+      link: 'https://www.gmbgraphic.com/projects/kidakudz-ft-boj-banger',
       gridArea: '6 / 30 / span 4 / span 4',
       imageSrc: 'https://cdn.prod.website-files.com/6704732ba4d30828d673de05/672ba9a56a2802de4de4b978_KIDA-POSTER-IG.webp',
       capabilities: ['art-direction', 'print-packaging', 'type-design'],
     },
     {
-      title: 'AI Tool Website Frontend',
+      title: 'Doechii & JT - Alter Ego',
       year: '2024',
-      link: 'https://ai-tool-website-frontend.vercel.app/',
+      link: 'https://www.gmbgraphic.com/projects/doechii-alter-ego',
       gridArea: '7 / 2 / span 6 / span 5',
       imageSrc: 'https://cdn.prod.website-files.com/6704732ba4d30828d673de05/677fabaac24647ca24967d1e_02.webp',
       capabilities: ['visual-identity', 'motion-3d', 'art-direction'],
@@ -56,17 +56,17 @@ export class GalleryService {
       capabilities: ['digital-experiences', 'creative-coding', 'ai-generative-systems', 'systems-architecture'],
     },
     {
-      title: 'Next.js Enterprise Boilerplate',
+      title: 'Marina Satti - Lalalala',
       year: '2024',
-      link: 'https://nextjs-enterprise-boilerplate-flame-three-23.vercel.app/',
+      link: 'https://www.gmbgraphic.com/projects/marina-satti-lalalala',
       gridArea: '11 / 22 / span 6 / span 6',
       imageSrc: 'https://jcz25fazaz.flowdrivecdn.com/ST1TvExnJf',
       capabilities: ['visual-identity', 'art-direction', 'film-editorial'],
     },
     {
-      title: 'Nodes In Space Portfolio',
+      title: 'AntsLive - Captain Ants',
       year: '2023',
-      link: 'https://nodes-in-space-portfolio.vercel.app/',
+      link: 'https://www.gmbgraphic.com/projects/antslive-captain-ants',
       gridArea: '12 / 2 / span 5 / span 4',
       imageSrc: 'https://cdn.prod.website-files.com/6704732ba4d30828d673de05/672ba959e510ddef1cf9269a_POSTER_LAYERED-WITH-CREDITS.webp',
       capabilities: ['visual-identity', 'print-packaging', 'narrative-copywriting'],
