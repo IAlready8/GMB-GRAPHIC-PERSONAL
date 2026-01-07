@@ -110,6 +110,48 @@ export class ThemeService {
     {
       name: '3D Particle Mesh',
       properties: { ...this.defaultProperties, '--bg-color': '#000000', '--text-color': '#ffffff', '--text-color-secondary': '#d4d4d4', '--text-color-muted': '#a3a3a3', '--border-color': '#ffffff', '--accent-color': '#0ea5e9', '--accent-color-hover': '#38bdf8', '--special-accent-color': '#f87171', '--bg-overlay-color': '#171717', '--text-overlay-color': '#e5e5e5', '--scrollbar-track-color': '#171717', '--scrollbar-thumb-color': '#0ea5e9', '--scrollbar-thumb-hover-color': '#38bdf8' }
+    },
+    // --- NEW GRADIENT INSPIRED THEMES ---
+    {
+      name: 'Neon Dusk',
+      properties: { ...this.defaultProperties, '--bg-color': '#0f172a', '--text-color': '#f472b6', '--text-color-secondary': '#e879f9', '--text-color-muted': '#818cf8', '--border-color': '#c084fc', '--accent-color': '#22d3ee', '--accent-color-hover': '#67e8f9', '--special-accent-color': '#facc15', '--bg-overlay-color': '#0f172a', '--text-overlay-color': '#f472b6', '--scrollbar-track-color': '#0f172a', '--scrollbar-thumb-color': '#c084fc', '--scrollbar-thumb-hover-color': '#d8b4fe' }
+    },
+    {
+      name: 'Acid Rain',
+      properties: { ...this.defaultProperties, '--bg-color': '#020617', '--text-color': '#bef264', '--text-color-secondary': '#86efac', '--text-color-muted': '#3f6212', '--border-color': '#3f6212', '--accent-color': '#22c55e', '--accent-color-hover': '#4ade80', '--special-accent-color': '#faff00', '--bg-overlay-color': '#020617', '--text-overlay-color': '#bef264', '--scrollbar-track-color': '#020617', '--scrollbar-thumb-color': '#bef264', '--scrollbar-thumb-hover-color': '#d9f99d' }
+    },
+    {
+      name: 'Solar Flare',
+      properties: { ...this.defaultProperties, '--bg-color': '#450a0a', '--text-color': '#fca5a5', '--text-color-secondary': '#fdba74', '--text-color-muted': '#b91c1c', '--border-color': '#f87171', '--accent-color': '#fcd34d', '--accent-color-hover': '#fbbf24', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#450a0a', '--text-overlay-color': '#fca5a5', '--scrollbar-track-color': '#450a0a', '--scrollbar-thumb-color': '#f87171', '--scrollbar-thumb-hover-color': '#fca5a5' }
+    },
+    {
+      name: 'Deep Dive',
+      properties: { ...this.defaultProperties, '--bg-color': '#082f49', '--text-color': '#7dd3fc', '--text-color-secondary': '#bae6fd', '--text-color-muted': '#0c4a6e', '--border-color': '#0369a1', '--accent-color': '#38bdf8', '--accent-color-hover': '#7dd3fc', '--special-accent-color': '#f0f9ff', '--bg-overlay-color': '#082f49', '--text-overlay-color': '#7dd3fc', '--scrollbar-track-color': '#082f49', '--scrollbar-thumb-color': '#0369a1', '--scrollbar-thumb-hover-color': '#0ea5e9' }
+    },
+    {
+      name: 'Ultra Violet',
+      properties: { ...this.defaultProperties, '--bg-color': '#2e1065', '--text-color': '#e9d5ff', '--text-color-secondary': '#d8b4fe', '--text-color-muted': '#6b21a8', '--border-color': '#a855f7', '--accent-color': '#f472b6', '--accent-color-hover': '#fbcfe8', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#2e1065', '--text-overlay-color': '#e9d5ff', '--scrollbar-track-color': '#2e1065', '--scrollbar-thumb-color': '#a855f7', '--scrollbar-thumb-hover-color': '#c084fc' }
+    },
+    // --- NEW BRUTALIST THEMES ---
+    {
+      name: 'Cardboard',
+      properties: { ...this.defaultProperties, '--bg-color': '#a1815b', '--text-color': '#2d241b', '--text-color-secondary': '#4a3b2a', '--text-color-muted': '#5c4d3c', '--border-color': '#2d241b', '--accent-color': '#000000', '--accent-color-hover': '#1a1a1a', '--special-accent-color': '#e5e5e5', '--bg-overlay-color': '#a1815b', '--text-overlay-color': '#2d241b', '--scrollbar-track-color': '#a1815b', '--scrollbar-thumb-color': '#2d241b', '--scrollbar-thumb-hover-color': '#4a3b2a', '--bg-texture-url': `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")` }
+    },
+    {
+      name: 'Asphalt',
+      properties: { ...this.defaultProperties, '--bg-color': '#262626', '--text-color': '#d4d4d4', '--text-color-secondary': '#a3a3a3', '--text-color-muted': '#525252', '--border-color': '#525252', '--accent-color': '#facc15', '--accent-color-hover': '#fde047', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#262626', '--text-overlay-color': '#d4d4d4', '--scrollbar-track-color': '#262626', '--scrollbar-thumb-color': '#525252', '--scrollbar-thumb-hover-color': '#737373', '--bg-texture-url': `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E")` }
+    },
+    {
+      name: 'Sterile',
+      properties: { ...this.defaultProperties, '--bg-color': '#ffffff', '--text-color': '#0f172a', '--text-color-secondary': '#334155', '--text-color-muted': '#94a3b8', '--border-color': '#e2e8f0', '--accent-color': '#3b82f6', '--accent-color-hover': '#60a5fa', '--special-accent-color': '#ef4444', '--bg-overlay-color': '#ffffff', '--text-overlay-color': '#0f172a', '--scrollbar-track-color': '#f1f5f9', '--scrollbar-thumb-color': '#cbd5e1', '--scrollbar-thumb-hover-color': '#94a3b8' }
+    },
+    {
+      name: 'Bunker',
+      properties: { ...this.defaultProperties, '--bg-color': '#3f3f46', '--text-color': '#d4d4d8', '--text-color-secondary': '#a1a1aa', '--text-color-muted': '#52525b', '--border-color': '#18181b', '--accent-color': '#84cc16', '--accent-color-hover': '#a3e635', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#3f3f46', '--text-overlay-color': '#d4d4d8', '--scrollbar-track-color': '#3f3f46', '--scrollbar-thumb-color': '#18181b', '--scrollbar-thumb-hover-color': '#27272a' }
+    },
+    {
+      name: 'Payload',
+      properties: { ...this.defaultProperties, '--bg-color': '#18181b', '--text-color': '#fbbf24', '--text-color-secondary': '#fcd34d', '--text-color-muted': '#b45309', '--border-color': '#f59e0b', '--accent-color': '#ef4444', '--accent-color-hover': '#f87171', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#18181b', '--text-overlay-color': '#fbbf24', '--scrollbar-track-color': '#18181b', '--scrollbar-thumb-color': '#f59e0b', '--scrollbar-thumb-hover-color': '#fbbf24', '--special-text-glow': '0 0 2px #f59e0b' }
     }
   ];
 

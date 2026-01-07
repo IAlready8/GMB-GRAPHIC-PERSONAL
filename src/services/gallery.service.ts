@@ -32,9 +32,9 @@ export class GalleryService {
       capabilities: ['digital-experiences', 'product-design-ui-ux', 'ai-generative-systems'],
     },
     {
-      title: 'Kidakudz ft Boj - Banger',
-      year: '2024',
-      link: 'https://www.gmbgraphic.com/projects/kidakudz-ft-boj-banger',
+      title: 'DEV-TOOLS',
+      year: '2025',
+      link: 'https://dev-tools-3zvqhnezp-itsokialready8.vercel.app/#/$0',
       gridArea: '6 / 30 / span 4 / span 4',
       imageSrc: 'https://cdn.prod.website-files.com/6704732ba4d30828d673de05/672ba9a56a2802de4de4b978_KIDA-POSTER-IG.webp',
       capabilities: ['art-direction', 'print-packaging', 'type-design'],
