@@ -72,7 +72,7 @@ export class GalleryService {
       capabilities: ['visual-identity', 'print-packaging', 'narrative-copywriting'],
     },
     {
-      title: 'Personal Portfolio',
+      title: 'Personal-Portfolio',
       year: '2024',
       link: 'https://personal-portfolio-local-m2.vercel.app/',
       gridArea: '15 / 7 / span 4 / span 5',
@@ -96,9 +96,9 @@ export class GalleryService {
       capabilities: ['motion-3d', 'film-editorial', 'sound-design-score'],
     },
     {
-      title: 'Äyanna - In A Perfect World',
+      title: '3-YEARS OF PROMPTS - MY COLLECTION',
       year: '2024',
-      link: 'https://www.gmbgraphic.com/projects/ayanna-in-a-perfect-world',
+      link: 'https://3-years-of-prompts-my-collection-tzrm-itsokialready8.vercel.app/$0',
       gridArea: '19 / 13 / span 4 / span 6',
       imageSrc: 'https://cdn.prod.website-files.com/6704732ba4d30828d673de05/672ba9def43ec118df6d1244_videoframe_1561.webp',
       capabilities: ['visual-identity', 'art-direction', 'narrative-copywriting'],
