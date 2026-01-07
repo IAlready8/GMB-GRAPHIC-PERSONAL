@@ -4,6 +4,7 @@ export interface Theme {
   name: string;
   properties: {
     '--bg-color': string;
+    '--bg-image'?: string;
     '--text-color': string;
     '--text-color-secondary': string;
     '--text-color-muted': string;
@@ -18,6 +19,7 @@ export interface Theme {
     '--scrollbar-thumb-hover-color': string;
     '--bg-texture-url'?: string;
     '--special-text-glow'?: string;
+    '--backdrop-styles'?: string;
   };
 }
 
@@ -26,8 +28,10 @@ export interface Theme {
 })
 export class ThemeService {
   private defaultProperties = {
+    '--bg-image': 'none',
     '--bg-texture-url': 'none',
     '--special-text-glow': 'none',
+    '--backdrop-styles': '',
   };
 
   private themes: Theme[] = [
@@ -111,7 +115,7 @@ export class ThemeService {
       name: '3D Particle Mesh',
       properties: { ...this.defaultProperties, '--bg-color': '#000000', '--text-color': '#ffffff', '--text-color-secondary': '#d4d4d4', '--text-color-muted': '#a3a3a3', '--border-color': '#ffffff', '--accent-color': '#0ea5e9', '--accent-color-hover': '#38bdf8', '--special-accent-color': '#f87171', '--bg-overlay-color': '#171717', '--text-overlay-color': '#e5e5e5', '--scrollbar-track-color': '#171717', '--scrollbar-thumb-color': '#0ea5e9', '--scrollbar-thumb-hover-color': '#38bdf8' }
     },
-    // --- NEW GRADIENT INSPIRED THEMES ---
+    // --- VIBRANT SOLID THEMES ---
     {
       name: 'Neon Dusk',
       properties: { ...this.defaultProperties, '--bg-color': '#0f172a', '--text-color': '#f472b6', '--text-color-secondary': '#e879f9', '--text-color-muted': '#818cf8', '--border-color': '#c084fc', '--accent-color': '#22d3ee', '--accent-color-hover': '#67e8f9', '--special-accent-color': '#facc15', '--bg-overlay-color': '#0f172a', '--text-overlay-color': '#f472b6', '--scrollbar-track-color': '#0f172a', '--scrollbar-thumb-color': '#c084fc', '--scrollbar-thumb-hover-color': '#d8b4fe' }
@@ -132,7 +136,7 @@ export class ThemeService {
       name: 'Ultra Violet',
       properties: { ...this.defaultProperties, '--bg-color': '#2e1065', '--text-color': '#e9d5ff', '--text-color-secondary': '#d8b4fe', '--text-color-muted': '#6b21a8', '--border-color': '#a855f7', '--accent-color': '#f472b6', '--accent-color-hover': '#fbcfe8', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#2e1065', '--text-overlay-color': '#e9d5ff', '--scrollbar-track-color': '#2e1065', '--scrollbar-thumb-color': '#a855f7', '--scrollbar-thumb-hover-color': '#c084fc' }
     },
-    // --- NEW BRUTALIST THEMES ---
+    // --- BRUTALIST THEMES ---
     {
       name: 'Cardboard',
       properties: { ...this.defaultProperties, '--bg-color': '#a1815b', '--text-color': '#2d241b', '--text-color-secondary': '#4a3b2a', '--text-color-muted': '#5c4d3c', '--border-color': '#2d241b', '--accent-color': '#000000', '--accent-color-hover': '#1a1a1a', '--special-accent-color': '#e5e5e5', '--bg-overlay-color': '#a1815b', '--text-overlay-color': '#2d241b', '--scrollbar-track-color': '#a1815b', '--scrollbar-thumb-color': '#2d241b', '--scrollbar-thumb-hover-color': '#4a3b2a', '--bg-texture-url': `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")` }
@@ -152,6 +156,27 @@ export class ThemeService {
     {
       name: 'Payload',
       properties: { ...this.defaultProperties, '--bg-color': '#18181b', '--text-color': '#fbbf24', '--text-color-secondary': '#fcd34d', '--text-color-muted': '#b45309', '--border-color': '#f59e0b', '--accent-color': '#ef4444', '--accent-color-hover': '#f87171', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#18181b', '--text-overlay-color': '#fbbf24', '--scrollbar-track-color': '#18181b', '--scrollbar-thumb-color': '#f59e0b', '--scrollbar-thumb-hover-color': '#fbbf24', '--special-text-glow': '0 0 2px #f59e0b' }
+    },
+    // --- NEW GRADIENT THEMES ---
+    {
+      name: 'Fade to Black',
+      properties: { ...this.defaultProperties, '--bg-color': '#000000', '--bg-image': 'linear-gradient(to bottom, #3f3f46, #000000)', '--text-color': '#f4f4f5', '--text-color-secondary': '#d4d4d8', '--text-color-muted': '#71717a', '--border-color': '#71717a', '--accent-color': '#ffffff', '--accent-color-hover': '#e4e4e7', '--special-accent-color': '#000000', '--bg-overlay-color': 'rgba(0,0,0,0.8)', '--text-overlay-color': '#ffffff', '--scrollbar-track-color': '#18181b', '--scrollbar-thumb-color': '#52525b', '--scrollbar-thumb-hover-color': '#71717a', '--backdrop-styles': 'true' }
+    },
+    {
+      name: 'Sunset Strip',
+      properties: { ...this.defaultProperties, '--bg-color': '#8b5cf6', '--bg-image': 'linear-gradient(to right, #f43f5e, #8b5cf6)', '--text-color': '#ffffff', '--text-color-secondary': '#ffe4e6', '--text-color-muted': '#fda4af', '--border-color': '#ffffff', '--accent-color': '#fcd34d', '--accent-color-hover': '#fbbf24', '--special-accent-color': '#ffffff', '--bg-overlay-color': 'rgba(139, 92, 246, 0.9)', '--text-overlay-color': '#ffffff', '--scrollbar-track-color': '#8b5cf6', '--scrollbar-thumb-color': '#fcd34d', '--scrollbar-thumb-hover-color': '#fbbf24', '--backdrop-styles': 'true' }
+    },
+    {
+      name: 'Toxic Haze',
+      properties: { ...this.defaultProperties, '--bg-color': '#1a2e05', '--bg-image': 'radial-gradient(circle at 50% 50%, #365314 0%, #020617 100%)', '--text-color': '#bef264', '--text-color-secondary': '#86efac', '--text-color-muted': '#4d7c0f', '--border-color': '#86efac', '--accent-color': '#f9a8d4', '--accent-color-hover': '#f472b6', '--special-accent-color': '#ffffff', '--bg-overlay-color': 'rgba(26, 46, 5, 0.9)', '--text-overlay-color': '#bef264', '--scrollbar-track-color': '#1a2e05', '--scrollbar-thumb-color': '#86efac', '--scrollbar-thumb-hover-color': '#bef264', '--backdrop-styles': 'true' }
+    },
+    {
+      name: 'Northern Lights',
+      properties: { ...this.defaultProperties, '--bg-color': '#1e1b4b', '--bg-image': 'conic-gradient(from 180deg at 50% 50%, #1e1b4b, #312e81, #4c1d95, #1e1b4b)', '--text-color': '#67e8f9', '--text-color-secondary': '#a5f3fc', '--text-color-muted': '#0891b2', '--border-color': '#22d3ee', '--accent-color': '#e879f9', '--accent-color-hover': '#f0abfc', '--special-accent-color': '#ffffff', '--bg-overlay-color': 'rgba(30, 27, 75, 0.9)', '--text-overlay-color': '#67e8f9', '--scrollbar-track-color': '#1e1b4b', '--scrollbar-thumb-color': '#22d3ee', '--scrollbar-thumb-hover-color': '#67e8f9', '--backdrop-styles': 'true' }
+    },
+    {
+      name: 'Steel Breeze',
+      properties: { ...this.defaultProperties, '--bg-color': '#e5e7eb', '--bg-image': 'linear-gradient(120deg, #e5e7eb, #9ca3af)', '--text-color': '#111827', '--text-color-secondary': '#374151', '--text-color-muted': '#6b7280', '--border-color': '#374151', '--accent-color': '#ef4444', '--accent-color-hover': '#f87171', '--special-accent-color': '#111827', '--bg-overlay-color': 'rgba(229, 231, 235, 0.9)', '--text-overlay-color': '#111827', '--scrollbar-track-color': '#e5e7eb', '--scrollbar-thumb-color': '#ef4444', '--scrollbar-thumb-hover-color': '#f87171', '--backdrop-styles': 'true' }
     }
   ];
 

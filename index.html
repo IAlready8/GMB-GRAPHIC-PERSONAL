@@ -29,6 +29,7 @@
     /* Base theme variables (Default Brutalist) */
     :root {
       --bg-color: #e5e5e5;
+      --bg-image: none;
       --text-color: #171717;
       --text-color-secondary: #262626;
       --text-color-muted: #525252;
@@ -43,6 +44,13 @@
       --scrollbar-thumb-hover-color: #facc15;
       --bg-texture-url: none;
       --special-text-glow: none;
+    }
+    body {
+      background-image: var(--bg-image);
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     body::before {
       content: '';
