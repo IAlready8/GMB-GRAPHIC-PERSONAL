@@ -17,7 +17,7 @@
     <!-- Gallery Section -->
     <main class="w-full max-w-[2760px] aspect-[2760/1760] relative mx-auto">
       <div class="absolute inset-0 grid grid-cols-34 grid-rows-22 gap-5">
-        @for (item of galleryItems(); track $index) {
+        @for (item of items(); track item.title) {
           <app-gallery-item [item]="item" />
         }
       </div>

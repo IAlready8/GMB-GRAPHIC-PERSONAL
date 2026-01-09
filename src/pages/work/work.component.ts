@@ -11,6 +11,5 @@ import { GalleryService } from '../../services/gallery.service';
 })
 export class WorkComponent {
   private galleryService = inject(GalleryService);
-  
-  galleryItems = this.galleryService.getGalleryItems();
+  items = this.galleryService.getGalleryItems();
 }

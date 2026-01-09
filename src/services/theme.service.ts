@@ -36,6 +36,10 @@ export class ThemeService {
 
   private themes: Theme[] = [
     {
+      name: 'Ultra Violet',
+      properties: { ...this.defaultProperties, '--bg-color': '#2e1065', '--text-color': '#e9d5ff', '--text-color-secondary': '#d8b4fe', '--text-color-muted': '#6b21a8', '--border-color': '#a855f7', '--accent-color': '#f472b6', '--accent-color-hover': '#fbcfe8', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#2e1065', '--text-overlay-color': '#e9d5ff', '--scrollbar-track-color': '#2e1065', '--scrollbar-thumb-color': '#a855f7', '--scrollbar-thumb-hover-color': '#c084fc' }
+    },
+    {
       name: 'Concrete',
       properties: { ...this.defaultProperties, '--bg-color': '#d4d4d8', '--text-color': '#18181b', '--text-color-secondary': '#27272a', '--text-color-muted': '#52525b', '--border-color': '#000000', '--accent-color': '#f59e0b', '--accent-color-hover': '#fbbf24', '--special-accent-color': '#ef4444', '--bg-overlay-color': '#000000', '--text-overlay-color': '#e5e5e5', '--scrollbar-track-color': '#d4d4d8', '--scrollbar-thumb-color': '#f59e0b', '--scrollbar-thumb-hover-color': '#fbbf24' }
     },
@@ -131,10 +135,6 @@ export class ThemeService {
     {
       name: 'Deep Dive',
       properties: { ...this.defaultProperties, '--bg-color': '#082f49', '--text-color': '#7dd3fc', '--text-color-secondary': '#bae6fd', '--text-color-muted': '#0c4a6e', '--border-color': '#0369a1', '--accent-color': '#38bdf8', '--accent-color-hover': '#7dd3fc', '--special-accent-color': '#f0f9ff', '--bg-overlay-color': '#082f49', '--text-overlay-color': '#7dd3fc', '--scrollbar-track-color': '#082f49', '--scrollbar-thumb-color': '#0369a1', '--scrollbar-thumb-hover-color': '#0ea5e9' }
-    },
-    {
-      name: 'Ultra Violet',
-      properties: { ...this.defaultProperties, '--bg-color': '#2e1065', '--text-color': '#e9d5ff', '--text-color-secondary': '#d8b4fe', '--text-color-muted': '#6b21a8', '--border-color': '#a855f7', '--accent-color': '#f472b6', '--accent-color-hover': '#fbcfe8', '--special-accent-color': '#ffffff', '--bg-overlay-color': '#2e1065', '--text-overlay-color': '#e9d5ff', '--scrollbar-track-color': '#2e1065', '--scrollbar-thumb-color': '#a855f7', '--scrollbar-thumb-hover-color': '#c084fc' }
     },
     // --- BRUTALIST THEMES ---
     {
