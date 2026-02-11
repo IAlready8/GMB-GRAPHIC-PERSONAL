@@ -20,8 +20,8 @@ export class GalleryService {
       year: '24',
       link: 'https://www.gmbgraphic.com/projects/showreel',
       gridArea: '11 / 14 / span 6 / span 8',
-      videoSrc: 'https://jcz25Fazaz.flowdrivecdn.com/file-8f54793b-8f4d-4eff-b2b2-db8b5e82d94c',
-      capabilities: ['motion-3d', 'art-direction', 'film-editorial', 'sound-design-score'],
+      imageSrc: 'https://picsum.photos/seed/spowreel/1600/900',
+      capabilities: ['motion-3d', 'art-direction', 'film-editorial'],
     },
     {
       title: 'FIXUS',
@@ -93,7 +93,7 @@ export class GalleryService {
       link: 'https://www.gmbgraphic.com/projects/antslive-cutlery',
       gridArea: '17 / 1 / span 5 / span 5',
       imageSrc: 'https://jcz25fazaz.flowdrivecdn.com/UXqPpqVgud',
-      capabilities: ['motion-3d', 'film-editorial', 'sound-design-score'],
+      capabilities: ['motion-3d', 'film-editorial'],
     },
     {
       title: '3-YEARS OF PROMPTS - MY COLLECTION',

@@ -97,11 +97,6 @@ export class CapabilityService {
       description: 'Words as weapons. We write copy that cuts, that sticks, that builds worlds and burns down old ones. Your story isn\'t told; it\'s forged.',
     },
     {
-      title: 'SOUND DESIGN & SCORE',
-      slug: 'sound-design-score',
-      description: 'Silence is a vacuum. We fill it with noise, with tension, with feeling. We compose auditory landscapes that give our visuals a heartbeat and a snarl.',
-    },
-    {
       title: 'IMMERSIVE (AR/VR)',
       slug: 'immersive-ar-vr',
       description: 'Reality is a suggestion. We build new ones. Digital layers over the physical world, or entirely new spaces to inhabit. We don\'t escape reality; we overwrite it.',
